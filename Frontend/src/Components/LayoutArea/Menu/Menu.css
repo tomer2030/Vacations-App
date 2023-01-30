@@ -1,0 +1,8 @@
+.Menu {
+    display: flex;
+    font-size: medium;
+}
+
+.Menu .active {
+    font-weight: bold;
+}

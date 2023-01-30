@@ -1,0 +1,8 @@
+.Statistics p {
+	position: absolute;
+    top: 120px;
+    left: 10px;
+    margin: 0px;
+    font-size: medium;
+    font-weight: 500;
+}

@@ -1,0 +1,37 @@
+.VacationCard {
+	width: 330px;
+    height: 400px;
+    text-align: left;
+    overflow: auto;
+    
+}
+
+.VacationCard > h3 {
+    text-align: center;
+}
+
+.VacationCard > div {
+    margin: 10px;
+}
+
+.VacationCard > img {
+    position: absolute;
+	width: 330px;
+    height: 160px;
+    border-radius: 50px;
+    margin-top: 230px;
+}
+
+.ActionBox {
+    position: absolute;
+    margin-left: 290px;
+    direction: rtl;
+    font-size: medium;
+}
+
+.FollowBox {
+    position: absolute;
+    margin-left: -15px;
+    margin-top: -10px;
+    font-size: small;
+}

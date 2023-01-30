@@ -1,0 +1,21 @@
+.AllVacations {
+    display: inline-block;
+    
+}
+.absolutePagination{
+    position: absolute;
+    top: 130px;
+    left: 10px;
+}
+
+.Pagination {
+    display: inline-flex;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    
+}
+
+.Pagination > li {
+    padding: 10px;
+}

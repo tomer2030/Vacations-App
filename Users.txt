@@ -1,0 +1,15 @@
+Admin:
+Username: admin
+Password: admin
+
+Users:
+
+Username: gal123
+Password: 123
+
+Username: yosi123
+Password: 123
+
+Username: dani123
+Password: 123
+

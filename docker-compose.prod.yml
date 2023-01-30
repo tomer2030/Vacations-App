@@ -1,0 +1,104 @@
+# docker-compose.yml - defining docker containers
+
+# Our entire containers: 
+services:
+
+  # Our database service: 
+  vacations-database-service-prod: 
+
+    # Database image: 
+    image: vacations-database-image-prod
+
+    # Where is the Dockerfile to create image from:
+    build: ./Database
+
+    # Container name: 
+    container_name: vacations-database-container-prod
+
+    # Port Bindings: 
+    ports:
+      - 3306:3306
+
+    # Environment Variables: 
+    environment:
+      MARIADB_HOST: localhost # internal to the container
+      MARIADB_DATABASE: vacations
+      MARIADB_ROOT_USER: Tomer
+      MARIADB_ROOT_PASSWORD: Viner
+
+    # Container restart policy:
+    restart: unless-stopped
+
+    # Named Volume to persist the database:
+    volumes: 
+      # - vacations:/var/lib/mysql
+      - vacations:/bitnami/mariadb
+
+
+# ------------------------------------------------
+
+  # Our backend container:
+  vacations-backend-service-prod: 
+
+    # Image name to create:
+    image: vacations-backend-image-prod
+
+    # Where is the Dockerfile to create image from:
+    build:
+      context: /Backend
+      dockerfile: Dockerfile.prod
+
+    # What is the name of the container to create: 
+    container_name: vacations-backend-container-prod
+
+    # Port Binding (host:container):
+    ports:
+      - 3001:3001
+
+    # Environment Variables: 
+    environment:
+      MYSQL_HOST: vacations-database-service-prod # Service name is the host name - where the database exists.
+      MYSQL_DATABASE: vacations
+      MYSQL_USER: Tomer
+      MYSQL_PASSWORD: Viner
+
+    # Container restart policy:
+    restart: unless-stopped
+
+    # Which service we're depending on (for boot sequence):
+    depends_on:
+      - vacations-database-service-prod
+
+# ------------------------------------------------
+
+  # Frontend container: 
+  vacations-frontend-service-prod: 
+
+    # Image name: 
+    image: vacations-frontend-image-prod
+
+    # Where the Dockerfile exists: 
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile.prod
+
+    # Container name: 
+    container_name: vacations-frontend-container-prod
+
+    # Port binding (host:container): 
+    ports: 
+      - 80:80
+
+    # Restart policy: 
+    restart: unless-stopped
+
+    # Which project we're depending on:
+    depends_on:
+      - vacations-backend-service-prod
+
+# ------------------------------------------------
+
+# Named Volume list for recognizing all named volumes:
+volumes:
+  vacations:
+

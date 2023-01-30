@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "f80d0805-9733-42a6-a078-90236e11ee41",
+		"name": "Vacations Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23516161"
+	},
+	"item": [
+		{
+			"name": "Get all vacations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/vacations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vacations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all vacations for user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/vacations/user-follows/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vacations",
+						"user-follows",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the follow statistics per vacation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/vacations/follows/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vacations",
+						"follows",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new vacation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "destination",
+							"value": "sadfsdaf",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "sdafsad",
+							"type": "text"
+						},
+						{
+							"key": "picture",
+							"type": "file",
+							"src": "/C:/Users/tomer/OneDrive/שולחן העבודה/Pictures/סן לורנסו/photo_2019-08-17_22-27-02.jpg"
+						},
+						{
+							"key": "startDate",
+							"value": "10-10-2020",
+							"type": "text"
+						},
+						{
+							"key": "endDate",
+							"value": "11-10-2020",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "85000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vacations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vacations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update exist vacation",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "destination",
+							"value": "Jerusalem",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "The city of the 3 religions",
+							"type": "text"
+						},
+						{
+							"key": "picture",
+							"type": "file",
+							"src": "/C:/Users/tomer/OneDrive/שולחן העבודה/jerusalem.jpg"
+						},
+						{
+							"key": "startDate",
+							"value": "10-12-2018",
+							"type": "text"
+						},
+						{
+							"key": "endDate",
+							"value": "12-12-2018",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "3000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vacations/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vacations",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete vacation",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"destination\": \"Jerusalem\",\r\n        \"description\": \"The city of the 3 religions\",\r\n        \"pictureName\": \"asdfsadfs\",\r\n        \"startDate\": \"2023-04-12T22:00:00.000Z\",\r\n        \"endDate\": \"2023-04-30T21:00:00.000Z\",\r\n        \"price\": 3500\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/vacations/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vacations",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Follow vacation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/vacations/follows/new/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vacations",
+						"follows",
+						"new",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UnFollow vacation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/vacations/follows/un-follow/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vacations",
+						"follows",
+						"un-follow",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get if the",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/vacations/follows/un-follow/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"vacations",
+						"follows",
+						"un-follow",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Tomer\",\r\n    \"lastName\": \"Viner\",\r\n    \"username\": \"tomer203\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"tomer203\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6NSwiZmlyc3ROYW1lIjoieW9zaSIsImxhc3ROYW1lIjoiYXZpIiwidXNlcm5hbWUiOiJ5b3NpMTIzIiwicm9sZUlkIjoxfSwiaWF0IjoxNjc0MzMyMzk0LCJleHAiOjE2NzQzNDMxOTR9.Hg_basvMGPcobt1zckH7NkuxMQNowA3s1bUC4JXH12g",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
